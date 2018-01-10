@@ -1,0 +1,16 @@
+<header>
+  <div id="step-indicator">
+
+    <!--<ul>-->
+      <!--<li ng-repeat="(key, step) in ::$ctrl.steps track by $index"-->
+          <!--ng-class="{ active: $ctrl.pageConfigService.pageConfig.stepIndicator === step-1}">-->
+        <!--{{::step}}-->
+      <!--</li>-->
+    <!--</ul>-->
+    <ul id="numSteps">
+      <li *ngFor="let step of numSteps" class="step" [ngClass]="{style1: true, style2: false}">
+        <a href="">{{step}}</a> |
+      </li>
+    </ul>
+  </div>
+</header>

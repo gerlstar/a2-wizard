@@ -1,0 +1,11 @@
+ul#numSteps li{
+    display:inline;
+}
+
+.style1{
+    background-color: #ccc;
+}
+
+.style2{
+    background-color: #fff;
+}
