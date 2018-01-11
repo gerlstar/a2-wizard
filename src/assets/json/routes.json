@@ -1,0 +1,28 @@
+{
+  "ROUTES": [
+    {
+      "step": 1,
+      "name": "step1",
+      "next": "step2",
+      "previous": ""
+    },
+    {
+      "step": 2,
+      "name": "step2",
+      "previous": "step1",
+      "next": "step3"
+    },
+    {
+      "step": 3,
+      "name": "step3",
+      "previous": "step2",
+      "next": "step4"
+    },
+    {
+      "step": 4,
+      "name": "step4",
+      "previous": "step3",
+      "next": ""
+    }
+  ]
+}

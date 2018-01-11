@@ -9,7 +9,7 @@ import { Step2Component } from './components/step2/step2.component';
 import { Step3Component } from './components/step3/step3.component';
 import { Step4Component } from './components/step4/step4.component';
 import { AppRoutingModule } from './/app-routing.module';
-
+import { AuthGuardService }                from './services/auth-guard.service';
 
 
 @NgModule({
@@ -25,7 +25,9 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+      AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
