@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpModule, BaseRequestOptions} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WizardComponent } from './wizard/wizard.component';
@@ -10,12 +10,14 @@ import { Step3Component } from './components/step3/step3.component';
 import { Step4Component } from './components/step4/step4.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AuthGuardService }                from './services/auth-guard.service';
+import { RoutesService} from "./services/routes.service";
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WizardComponent,
+      WizardComponent,
+      AppComponent,
+
     Step1Component,
     Step2Component,
     Step3Component,
@@ -23,10 +25,12 @@ import { AuthGuardService }                from './services/auth-guard.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      HttpModule,
   ],
   providers: [
-      AuthGuardService
+      AuthGuardService,
+      RoutesService
   ],
   bootstrap: [AppComponent]
 })

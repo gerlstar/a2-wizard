@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RoutesService} from "./../../services/routes.service";
 
 @Component({
   selector: 'app-step2',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Step2Component implements OnInit {
 
-  constructor() { }
+  constructor(private routesService:RoutesService) {
+    // console.info(this.routesService.routes);
+  }
 
   ngOnInit() {
   }
