@@ -9,3 +9,7 @@ ul#numSteps li{
 .style2{
     background-color: #fff;
 }
+
+.active{
+    background-color: #ccc;
+}

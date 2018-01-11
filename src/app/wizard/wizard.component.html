@@ -8,8 +8,10 @@
       <!--</li>-->
     <!--</ul>-->
     <ul id="numSteps">
-      <li *ngFor="let step of numSteps" class="step" [ngClass]="{style1: true, style2: false}">
-        <a href="">{{step}}</a> |
+
+      {{style1}}
+      <li *ngFor="let step of numSteps" class="step" [ngClass]="{active: style1 }">
+        {{step}} |
       </li>
     </ul>
   </div>
