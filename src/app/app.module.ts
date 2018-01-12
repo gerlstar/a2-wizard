@@ -11,6 +11,7 @@ import { Step4Component } from './components/step4/step4.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AuthGuardService }                from './services/auth-guard.service';
 import { RoutesService} from "./services/routes.service";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RoutesService} from "./services/routes.service";
     Step1Component,
     Step2Component,
     Step3Component,
-    Step4Component
+    Step4Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
