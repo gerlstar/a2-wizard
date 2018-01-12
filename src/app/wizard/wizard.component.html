@@ -8,9 +8,9 @@
       <!--</li>-->
     <!--</ul>-->
     <ul id="numSteps">
-
-      {{style1}}
-      <li *ngFor="let step of numSteps" class="step" [ngClass]="{active: style1 }">
+currentStep =
+      {{currentStep}}
+      <li *ngFor="let step of numSteps" class="step" [ngClass]="{active: currentStep === step }">
         {{step}} |
       </li>
     </ul>

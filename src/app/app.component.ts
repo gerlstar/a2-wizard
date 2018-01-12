@@ -6,34 +6,28 @@ import {RoutesService} from "./services/routes.service";
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    providers: [RoutesService]
 })
 export class AppComponent implements OnInit {
     title = 'app';
     private errorMessage: string;
-    public routes: Array<any>;
+    public routes: Array<any> = [];
 
 
     constructor(private routesService: RoutesService) {
+        console.info('APP COMPONENT CONSTRUCTOR');
+        this.routesService.retrieveRoutes('hi');
+        routesService.routesRetrieved$.subscribe(
+            astronaut => {
+                this.routes.push(`${astronaut} confirmed the mission`);
 
+            });
     }
 
     ngOnInit(): void {
-        console.info('Setting the routes...')
-        this.routesService.setRoutes()
-            // .subscribe(r => {
-            //         console.log((<any>r).ROUTES);
-            //
-            //         this.routesService.routes = (<any>r).ROUTES;
-            //         // console.log(r);
-            //         // this.routes = (<any>r).ROUTES;
-            //         // let tmp = routes.ROUTES;
-            //         // this.routes = tmp;
-            //         // console.log(r);
-            //     },
-            //     error => {
-            //         this.errorMessage = <any>error
-            //     });
+        console.info('APP COMPONENT NGINIT')
+
 
     }
 }

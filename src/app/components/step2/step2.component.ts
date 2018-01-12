@@ -9,7 +9,8 @@ import {RoutesService} from "./../../services/routes.service";
 export class Step2Component implements OnInit {
 
   constructor(private routesService:RoutesService) {
-    // console.info(this.routesService.routes);
+
+      this.routesService.nextStep(2);
   }
 
   ngOnInit() {

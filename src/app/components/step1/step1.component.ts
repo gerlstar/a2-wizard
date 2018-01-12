@@ -9,10 +9,12 @@ import {RoutesService} from "./../../services/routes.service";
 })
 export class Step1Component implements OnInit, AfterContentInit  {
 
-    private routesService:RoutesService;
-    constructor() {
-        // console.info('constructor');
+
+    constructor(private routesService:RoutesService) {
+
+        this.routesService.nextStep(1);
     }
+
 
     ngOnInit() {
         console.info('init');

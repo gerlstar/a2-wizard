@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { Subject }    from 'rxjs/Subject';
 
 @Injectable()
 export class RoutesService {
@@ -12,19 +13,36 @@ export class RoutesService {
     public routes: Array<any>;
     private url = './../assets/json/routes.json';
 
+    // Observable string sources
+    private retrieveRoutesSource$ = new Subject<any>();
+    private changeInStepSource = new Subject<any>();
+
+    // Observable string streams
+    routesRetrieved$ = this.retrieveRoutesSource$.asObservable();
+    changeInStepConfirmed$ = this.changeInStepSource.asObservable();
+
     constructor(private http: Http) {
-        console.log('routes service');
-        // this.getRoutes()
-        //     .subscribe(r => {
-        //             // console.log(r);
-        //             this.routes = (<any>r).ROUTES;
-        //             // let tmp = routes.ROUTES;
-        //             // this.routes = tmp;
-        //             console.log(this.routes);
-        //         },
-        //         error => {
-        //             this.errorMessage = <any>error
-        //         });
+        // this.retrieveRoutes('hi')
+    }
+        // Service message commands
+    retrieveRoutes(mission: string) {
+        //lets get the routes then send a stream to those that are listening
+
+        this.getRoutes().subscribe(
+            r => {
+                this.routes = (<any>r).ROUTES;
+                //
+                this.retrieveRoutesSource$.next(this.routes);
+            }
+        )
+    }
+
+    nextStep(step:number) {
+        this.changeInStepSource.next(step);
+    }
+
+    public getMission(){
+        return this.retrieveRoutesSource$.asObservable();
     }
 
     public getRoutes(): Observable<any[]> {
