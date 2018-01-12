@@ -12,6 +12,7 @@ export class RoutesService {
     private errorMessage: string;
     public routes: Array<any>;
     private url = './../assets/json/routes.json';
+    private currentStep: number;
 
     // Observable string sources
     private retrieveRoutesSource$ = new Subject<any>();
@@ -39,6 +40,14 @@ export class RoutesService {
 
     nextStep(step:number) {
         this.changeInStepSource.next(step);
+    }
+
+    public setStep(step:number){
+        this.currentStep = step;
+    }
+
+    public getCurrentStep(){
+        return this.currentStep;
     }
 
     public getMission(){

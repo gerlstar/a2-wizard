@@ -1,5 +1,6 @@
 ul#numSteps li{
     display:inline;
+    padding-left: 5px;
 }
 
 .style1{

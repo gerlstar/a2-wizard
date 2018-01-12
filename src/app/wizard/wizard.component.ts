@@ -28,7 +28,7 @@ export class WizardComponent implements OnDestroy {
         //we can change the template
         this.listenChangesToStep = routesService.changeInStepConfirmed$.subscribe(
             newStep => {
-                console.log('new step =',newStep);
+                // console.log('new step =',newStep);
                 this.setNewStep(newStep);
             }
         );
@@ -38,6 +38,7 @@ export class WizardComponent implements OnDestroy {
 
     setNewStep(step:number){
         this.currentStep = step;
+        this.routesService.setStep(step);
     }
 
 
