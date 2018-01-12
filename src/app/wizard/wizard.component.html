@@ -1,15 +1,8 @@
 <header>
   <div id="step-indicator">
 
-    <!--<ul>-->
-      <!--<li ng-repeat="(key, step) in ::$ctrl.steps track by $index"-->
-          <!--ng-class="{ active: $ctrl.pageConfigService.pageConfig.stepIndicator === step-1}">-->
-        <!--{{::step}}-->
-      <!--</li>-->
-    <!--</ul>-->
     <ul id="numSteps">
-currentStep =
-      {{currentStep}}
+
       <li *ngFor="let step of numSteps" class="step" [ngClass]="{active: currentStep === step }">
         {{step}} |
       </li>

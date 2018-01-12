@@ -12,22 +12,6 @@ export class AuthGuardService implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
-        console.log('AuthGuard#canActivate called', url);
-        // console.log(this.routeService);
-        // console.log(this.routeService.routes);
-
-        if (url == '/step1'){
-            // this.routeService.getRoutes().subscribe(
-            //     result => {
-            //         console.log((<any>result).ROUTES);
-            //     }
-            //
-            // )
-
-            console.log('Routes => ',this.routeService.routes);
-        }else{
-            console.log('Routes => ',this.routeService.routes);
-        }
 
         return true;
     }
