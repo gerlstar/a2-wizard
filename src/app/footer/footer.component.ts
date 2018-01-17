@@ -38,6 +38,8 @@ export class FooterComponent implements OnInit, OnDestroy {
 
         const nextStep = '/step' + step;
         this.router.navigate([nextStep]);
+
+        this.routesService.nextStep(1);
     }
 
     ngOnDestroy() {

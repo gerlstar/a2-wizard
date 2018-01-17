@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router,
+import { CanActivate, Router,CanDeactivate,
     ActivatedRouteSnapshot,
     RouterStateSnapshot }    from '@angular/router';
 import {RoutesService} from "./../services/routes.service";
@@ -13,6 +13,9 @@ export class AuthGuardService implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
 
+        // console.log(state.url);
         return true;
     }
+
+
 }
