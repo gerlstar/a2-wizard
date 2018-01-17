@@ -1,4 +1,9 @@
-<p>
-  step1 works!
 
-</p>
+<form role="form" [formGroup]="form">
+  <label for="fund_name">Fund name:</label>
+  <input type="text" class="form-control" id="fund_name" name="fundName" placeholder="Fund name"
+         formControlName="fundName" minlength="3"
+         required><br />
+
+</form>
+
