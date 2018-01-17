@@ -36,6 +36,10 @@ export class WizardComponent implements OnDestroy {
 
     }
 
+    /**
+     * Highlight the current step in the wizard
+     * @param {number} step
+     */
     setNewStep(step:number){
         this.currentStep = step;
         this.routesService.setStep(step);

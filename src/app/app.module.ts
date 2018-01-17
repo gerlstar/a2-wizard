@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpModule, BaseRequestOptions} from '@angular/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { WizardComponent } from './wizard/wizard.component';
@@ -10,6 +11,7 @@ import { Step3Component } from './components/step3/step3.component';
 import { Step4Component } from './components/step4/step4.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AuthGuardService }                from './services/auth-guard.service';
+import { CanDeactivateGuard }                from './services/can-deactivate-guard.service';
 import { RoutesService} from "./services/routes.service";
 import { FooterComponent } from './footer/footer.component';
 
@@ -28,11 +30,14 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+      FormsModule,
       HttpModule,
+      ReactiveFormsModule
   ],
   providers: [
       AuthGuardService,
-      RoutesService
+      RoutesService,
+      CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })
