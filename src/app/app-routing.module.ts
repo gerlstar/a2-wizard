@@ -5,6 +5,7 @@ import {Step2Component} from './components/step2/step2.component';
 import {Step3Component} from './components/step3/step3.component';
 import {Step4Component} from './components/step4/step4.component';
 import {AuthGuardService} from './services/auth-guard.service';
+import {CanDeactivateGuard} from "./services/can-deactivate-guard.service";
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
     {
         path: 'step1', component: Step1Component,
 
-        canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService],
+        canDeactivate: [CanDeactivateGuard]
     },
     {
         path: 'step3', component: Step3Component,
